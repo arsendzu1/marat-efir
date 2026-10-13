@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бесплатный вебинар Марата Вердиева</title>
+  <meta name="description" content="Бесплатный вебинар Марата Вердиева 16 октября. За 30 дней вернуть себе спокойствие, достоинство и лёгкость. Оставьте контакты и получите доступ.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Бесплатный вебинар Марата Вердиева — 16 октября">
+  <meta property="og:description" content="За 30 дней вернуть себе спокойствие, достоинство и лёгкость и чувствовать себя лучше, чем когда-либо.">
+  <meta property="og:image" content="marat.jpg">
+  <meta name="theme-color" content="#1F4FE0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1F4FE0;
+      --button: #1A3FB8;
+      --button-hover: #15339A;
+      --accent: #6FB4E8;
+      --soft: #EEF5FC;
+      --text: #0F1B3D;
+      --muted: #5B6B85;
+      --input-bg: #F5F8FC;
+      --input-border: #C9D6EA;
+      --bg: #FFFFFF;
+      --gutter: 16px;
+      --line: #DCE7F5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    [hidden] { display: none !important; }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .section-title {
+      margin: 0 0 40px;
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+
+    /* Размытые голубые пятна */
+    .blobs { position: relative; overflow: hidden; isolation: isolate; }
+    .blobs::before, .blobs::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(70px);
+      pointer-events: none;
+    }
+
+    /* 1. Верхняя полоса */
+    .topbar {
+      display: block;
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      padding: 13px var(--gutter);
+      font-size: 15px;
+      line-height: 1.45;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .topbar:hover { background: #1B46CC; }
+    .topbar__badge {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .06em;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-right: 8px;
+      vertical-align: 1px;
+    }
+    .topbar b { font-weight: 800; }
+    .topbar__timer {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .16);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .topbar__arrow { display: inline-block; margin-left: 6px; transition: transform .2s; }
+    .topbar:hover .topbar__arrow { transform: translateX(4px); }
+
+    /* 2. Первый экран */
+    .hero { padding: 44px 0 56px; }
+    .hero::before {
+      width: 560px; height: 560px;
+      top: -220px; right: -140px;
+      background: radial-gradient(circle, rgba(111, 180, 232, .55), rgba(111, 180, 232, 0) 70%);
+    }
+    .hero::after {
+      width: 520px; height: 520px;
+      bottom: -260px; left: -180px;
+      background: radial-gradient(circle, rgba(31, 79, 224, .22), rgba(31, 79, 224, 0) 70%);
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+      grid-template-areas: "photo head";
+      column-gap: 56px;
+      align-items: center;
+    }
+    .hero__photo { grid-area: photo; align-self: center; }
+    .hero__head { grid-area: head; }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .photo {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--soft);
+      box-shadow: 0 30px 60px -28px rgba(15, 27, 61, .55), 0 0 0 1px rgba(15, 27, 61, .04);
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 62% 50%;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 10px;
+      margin-top: 18px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      color: var(--button);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .date-pill svg { flex: 0 0 auto; width: 18px; height: 18px; }
+    .date-pill i { font-style: normal; color: var(--accent); }
+
+    /* 3. Счётчик */
+    .countdown { margin-top: 18px; }
+    .countdown__label {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .countdown__cells { display: flex; gap: 10px; }
+    .countdown__cell {
+      flex: 0 1 92px;
+      min-width: 0;
+      padding: 10px 6px 8px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px -18px rgba(31, 79, 224, .5);
+      text-align: center;
+    }
+    .countdown__num {
+      display: block;
+      color: var(--primary);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown__unit {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .countdown__live {
+      margin: 0;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      color: var(--button);
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    /* 4. Форма */
+    .form-section { background: var(--soft); padding: 88px 0; }
+    .form-box { max-width: 720px; margin: 0 auto; }
+    .form-title {
+      margin: 0 0 24px;
+      font-size: 36px;
+      text-align: center;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .form-title b { font-weight: 800; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field--full { grid-column: 1 / -1; }
+
+    .field input {
+      width: 100%;
+      height: 60px;
+      padding: 0 20px;
+      background: var(--input-bg);
+      border: 2px solid var(--input-border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 500;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field input::placeholder {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 500;
+      opacity: .85;
+    }
+    .field input:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(31, 79, 224, .12);
+    }
+    .field.is-invalid input { border-color: #D93B3B; }
+    .field__error {
+      display: none;
+      margin-top: 6px;
+      color: #D93B3B;
+      font-size: 14px;
+      text-align: left;
+    }
+    .field.is-invalid .field__error { display: block; }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 560px;
+      height: 80px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+      background: var(--button);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px -12px rgba(26, 63, 184, .6);
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .btn:hover { background: var(--button-hover); }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: .7; cursor: default; }
+    .form-section .btn { max-width: none; height: 72px; margin-top: 16px; }
+    .hero__cta { max-width: 420px; height: 72px; margin: 24px 0 0; }
+
+    .form-status {
+      min-height: 0;
+      margin-top: 10px;
+      color: #D93B3B;
+      font-size: 15px;
+    }
+
+    .success { padding: 8px 0; }
+    .success__text {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    /* Дисклеймер */
+    .legal {
+      margin: 16px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .legal a { color: var(--muted); text-underline-offset: 2px; }
+    .legal a:hover { color: var(--primary); }
+
+    /* 5. Преимущества */
+    .perks-section { background: var(--soft); padding: 44px 0; }
+    .perks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 1040px;
+    }
+    .perks li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .perks__icon {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 10px 24px -16px rgba(31, 79, 224, .6);
+    }
+    .perks__icon svg { width: 26px; height: 26px; }
+
+    /* Программа */
+    .program { padding: 96px 0; }
+    .program::before {
+      width: 620px; height: 620px;
+      top: -120px; left: -260px;
+      background: radial-gradient(circle, rgba(111, 180, 232, .45), rgba(111, 180, 232, 0) 70%);
+    }
+    .program::after {
+      width: 560px; height: 560px;
+      bottom: -200px; right: -200px;
+      background: radial-gradient(circle, rgba(31, 79, 224, .18), rgba(31, 79, 224, 0) 70%);
+    }
+    .program__list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+    .program__item {
+      position: relative;
+      padding: 28px 28px 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 40px -32px rgba(15, 27, 61, .4);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+    .program__num {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .program__item p {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* 7. Отзыв */
+    .review { background: var(--bg); padding: 88px 0; }
+    .review__img {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 24px 50px -28px rgba(15, 27, 61, .45);
+    }
+
+    /* 8. Подвал */
+    .footer { background: var(--primary); color: #fff; padding: 48px 0 32px; }
+    .footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer__brand { font-size: 28px; font-weight: 800; line-height: 1.2; }
+    .footer__brand span { font-weight: 400; opacity: .85; font-size: 20px; }
+    .footer__links { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 16px; font-weight: 500; }
+    .footer__links a { text-decoration: none; opacity: .9; }
+    .footer__links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+    .footer__copy {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      font-size: 13px;
+      opacity: .75;
+    }
+
+    /* Закреплённая кнопка (только телефон) */
+    .sticky-cta { display: none; }
+
+    /* Появление при прокрутке */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .sticky-cta { transition: none !important; }
+    }
+
+    /* Планшет и узкие экраны: одна колонка */
+    @media (max-width: 960px) {
+      .hero { padding: 32px 0 48px; }
+      .hero__grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "head" "photo";
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .hero__head { text-align: center; }
+      .countdown__cells { justify-content: center; }
+      .hero__cta { margin: 24px auto 0; }
+      .hero__photo { margin-top: 24px; }
+      .photo img { aspect-ratio: auto; height: 420px; object-position: 62% 42%; }
+      .perks { grid-template-columns: minmax(0, 1fr); max-width: 420px; gap: 16px; }
+      .section-title { font-size: 34px; }
+    }
+
+    /* Мобильные */
+    @media (max-width: 640px) {
+      .topbar { font-size: 14px; padding: 11px var(--gutter); }
+      .topbar__timer { display: table; margin: 6px auto 0; }
+
+      .hero { padding: 28px 0 40px; }
+      .hero h1 { font-size: 30px; line-height: 1.15; }
+      .date-pill { justify-content: center; gap: 4px 7px; font-size: 13px; padding: 8px 12px; margin-top: 16px; }
+      .date-pill svg { width: 16px; height: 16px; }
+      .countdown__cells { gap: 8px; }
+      .countdown__cell { flex: 1 1 0; padding: 9px 4px 7px; }
+      .countdown__num { font-size: 28px; }
+      .countdown__unit { font-size: 12px; }
+      .countdown__live { font-size: 16px; }
+      .photo { border-radius: 18px; }
+      .photo img { height: 320px; }
+
+      .form-section { padding: 56px 0; }
+      .form-title { font-size: 26px; margin-bottom: 18px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field input { height: 60px; padding: 0 18px; }
+      .btn { height: 68px; font-size: 17px; }
+      .form-section .btn, .hero__cta { height: 68px; }
+      .success__text { font-size: 24px; text-align: center; }
+
+      .perks-section { padding: 32px 0; }
+      .perks li { font-size: 17px; }
+      .perks__icon { width: 48px; height: 48px; border-radius: 14px; }
+      .perks__icon svg { width: 22px; height: 22px; }
+
+      .program { padding: 56px 0; }
+      .section-title { font-size: 28px; margin-bottom: 28px; }
+      .program__list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+      .program__item { padding: 22px 20px 24px; }
+      .program__num { font-size: 36px; margin-bottom: 8px; }
+      .program__item p { font-size: 17px; }
+
+      .review { padding: 56px 0; }
+
+      .footer { padding: 36px 0 104px; }
+      .footer__top { flex-direction: column; align-items: flex-start; }
+      .footer__brand { font-size: 24px; }
+      .footer__brand span { display: block; font-size: 17px; margin-top: 4px; }
+
+      .sticky-cta {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+        background: linear-gradient(to top, rgba(255, 255, 255, .96) 60%, rgba(255, 255, 255, 0));
+        transform: translateY(110%);
+        visibility: hidden;
+        transition: transform .3s ease, visibility .3s;
+      }
+      .sticky-cta.is-shown { transform: none; visibility: visible; }
+      .sticky-cta .btn { height: 60px; margin: 0; font-size: 16px; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- 1. Верхняя полоса -->
+  <a href="#form" class="topbar" data-scroll>
+    <span class="topbar__badge">НОВОЕ</span>
+    <b>Бесплатный вебинар Марата Вердиева — 16&nbsp;октября в&nbsp;17:00&nbsp;МСК:</b>
+    узнайте, подходит ли он вам <span class="topbar__arrow" aria-hidden="true">→</span>
+    <span class="topbar__timer" id="topbar-timer" hidden></span>
+  </a>
+
+  <main>
+    <!-- 2. Первый экран: фото + заголовок, дата, счётчик -->
+    <section class="hero blobs">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__head">
+            <h1>За 30 дней вернуть себе спокойствие, достоинство и лёгкость и чувствовать себя лучше, чем когда-либо.</h1>
+
+            <p class="date-pill" id="date-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              <span>16 октября</span><i>·</i><span>17:00 МСК</span><i>·</i><span>онлайн</span><i>·</i><span>бесплатно</span>
+            </p>
+
+            <!-- 3. Счётчик (появляется только с JavaScript) -->
+            <div class="countdown" id="countdown" hidden>
+              <div id="countdown-timer">
+                <p class="countdown__label">До эфира осталось</p>
+                <div class="countdown__cells" role="timer" aria-live="off">
+                  <div class="countdown__cell" id="cd-days-cell"><span class="countdown__num" id="cd-days">00</span><span class="countdown__unit" id="cd-days-unit">дней</span></div>
+                  <div class="countdown__cell"><span class="countdown__num" id="cd-hours">00</span><span class="countdown__unit" id="cd-hours-unit">часов</span></div>
+                  <div class="countdown__cell"><span class="countdown__num" id="cd-minutes">00</span><span class="countdown__unit" id="cd-minutes-unit">минут</span></div>
+                  <div class="countdown__cell"><span class="countdown__num" id="cd-seconds">00</span><span class="countdown__unit" id="cd-seconds-unit">секунд</span></div>
+                </div>
+              </div>
+              <p class="countdown__live" id="countdown-live" hidden>Эфир уже идёт — оставьте заявку, и мы пришлём ссылку</p>
+            </div>
+
+            <a href="#form" class="btn hero__cta" data-scroll>Получить доступ</a>
+          </div>
+
+          <div class="hero__photo">
+            <div class="photo">
+              <img src="marat.jpg" alt="Марат Вердиев" width="1080" height="1080" fetchpriority="high">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Преимущества -->
+    <section class="perks-section">
+      <div class="container">
+        <ul class="perks reveal">
+          <li>
+            <span class="perks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span>
+            <span>Бесплатно</span>
+          </li>
+          <li>
+            <span class="perks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+            <span>Доступ сразу после заявки</span>
+          </li>
+          <li>
+            <span class="perks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></svg></span>
+            <span>Блог Марата читают 489 тысяч человек</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Программа вебинара -->
+    <section class="program blobs">
+      <div class="container">
+        <h2 class="section-title reveal">Что разберём на вебинаре</h2>
+        <ol class="program__list">
+          <li class="program__item reveal">
+            <span class="program__num">01</span>
+            <p>Почему из дома уходит спокойствие и что женщина может вернуть в него сама, без ссор и выяснений.</p>
+          </li>
+          <li class="program__item reveal">
+            <span class="program__num">02</span>
+            <p>Как держать себя с достоинством, чтобы мужчина слышал вас и уважал ваше слово.</p>
+          </li>
+          <li class="program__item reveal">
+            <span class="program__num">03</span>
+            <p>Откуда берётся тяжесть на душе и как за 30 дней прийти к лёгкости.</p>
+          </li>
+          <li class="program__item reveal">
+            <span class="program__num">04</span>
+            <p>Что меняется в семье, когда меняется ваше состояние: отношение мужчины, атмосфера в доме, ваше самочувствие.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. Форма -->
+    <section class="form-section" id="form">
+      <div class="container">
+        <div class="form-box">
+          <div class="form-wrap" id="form-wrap">
+            <h2 class="form-title">Оставьте свои <b>контакты</b></h2>
+
+            <form id="lead-form" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <input type="text" name="name" id="f-name" placeholder="Имя" autocomplete="given-name" aria-label="Имя" required>
+                  <div class="field__error">Введите имя</div>
+                </div>
+                <div class="field">
+                  <input type="tel" name="phone" id="f-phone" placeholder="Телефон" autocomplete="tel" inputmode="tel" aria-label="Телефон" required>
+                  <div class="field__error">Введите номер полностью</div>
+                </div>
+                <div class="field field--full">
+                  <input type="text" name="telegram" id="f-telegram" placeholder="Telegram" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Telegram (необязательно)">
+                </div>
+              </div>
+
+              <button type="submit" class="btn" id="submit-btn">Получить доступ</button>
+              <div class="form-status" id="form-status" role="alert"></div>
+            </form>
+          </div>
+
+          <!-- 6. Дисклеймер -->
+          <p class="legal">
+            Оставляя заявку, вы соглашаетесь на связь по телефону и в мессенджерах и принимаете
+            <a href="https://blogverdi.ru/policy" target="_blank" rel="noopener">политику конфиденциальности</a>.
+            Мы не передаём ваши данные третьим лицам.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Отзыв -->
+    <section class="review">
+      <div class="container">
+        <img class="review__img reveal" src="review.png" alt="Скриншот отзыва подписчицы" width="832" height="268" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. Подвал -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">Марат Вердиев <span>· Психолог с характером</span></div>
+        <nav class="footer__links" aria-label="Ссылки">
+          <a href="https://t.me/Blogverdiassistant" target="_blank" rel="noopener">Поддержка</a>
+          <a href="https://blogverdi.ru/policy" target="_blank" rel="noopener">Политика конфиденциальности</a>
+        </nav>
+      </div>
+      <div class="footer__copy">© 2026 Марат Вердиев</div>
+    </div>
+  </footer>
+
+  <!-- Закреплённая кнопка на телефоне -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <a href="#form" class="btn" data-scroll tabindex="-1">Получить доступ</a>
+  </div>
+
+  <script>
+    /* ===== Настройки ===== */
+    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxg-wBXmVx5F1TDLjEmfE0W4qob63ECwYpub1bWCV2Vn9Z0yFSqzASPrXly-gAjTN9m/exec'; // URL веб-приложения Google Apps Script (…/exec)
+    const CHANNEL_URL = 'https://t.me/+HMgHaKfshzBhMDgy';     // Ссылка на Telegram-канал; пусто — кнопка не показывается
+
+    (function () {
+      'use strict';
+
+      /* --- Плавный скролл к форме --- */
+      document.querySelectorAll('[data-scroll]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          const target = document.querySelector(el.getAttribute('href'));
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(function () {
+            const first = document.getElementById('f-name');
+            if (first) first.focus({ preventScroll: true });
+          }, 600);
+        });
+      });
+
+      /* --- Появление блоков --- */
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* --- Маска телефона +7 (___) ___-__-__ --- */
+      const phone = document.getElementById('f-phone');
+
+      function phoneDigits(value) {
+        let d = value.replace(/\D/g, '');
+        if (d.length && (d[0] === '7' || d[0] === '8')) d = d.slice(1);
+        return d.slice(0, 10);
+      }
+
+      function formatPhone(d) {
+        if (!d.length) return '';
+        let out = '+7 (' + d.slice(0, 3);
+        if (d.length >= 3) out += ') ';
+        if (d.length > 3) out += d.slice(3, 6);
+        if (d.length > 6) out += '-' + d.slice(6, 8);
+        if (d.length > 8) out += '-' + d.slice(8, 10);
+        return out;
+      }
+
+      phone.addEventListener('focus', function () {
+        if (!phone.value) phone.value = '+7 (';
+      });
+      phone.addEventListener('blur', function () {
+        if (!phoneDigits(phone.value).length) phone.value = '';
+      });
+      let lastDigits = '';
+      phone.addEventListener('input', function (e) {
+        let d = phoneDigits(phone.value);
+        // Стёрли только скобку/дефис — стираем и цифру перед ним, чтобы не «застревать» на маске
+        if (e.inputType === 'deleteContentBackward' && d === lastDigits) d = d.slice(0, -1);
+        lastDigits = d;
+        phone.value = formatPhone(d) || (document.activeElement === phone ? '+7 (' : '');
+        clearError(phone);
+      });
+      phone.addEventListener('paste', function (e) {
+        const text = (e.clipboardData || window.clipboardData).getData('text');
+        if (!text) return;
+        e.preventDefault();
+        lastDigits = phoneDigits(text);
+        phone.value = formatPhone(lastDigits);
+        clearError(phone);
+      });
+
+      /* --- Telegram: автоматический @ --- */
+      const tg = document.getElementById('f-telegram');
+      tg.addEventListener('input', function () {
+        let v = tg.value.trim()
+          .replace(/^@+/, '')
+          .replace(/^(https?:\/\/)?(www\.)?(t\.me|telegram\.me)\//i, '')
+          .replace(/\s+/g, '')
+          .replace(/^@+/, '');
+        tg.value = v ? '@' + v : '';
+      });
+
+      /* --- Валидация --- */
+      const nameInput = document.getElementById('f-name');
+      nameInput.addEventListener('input', function () { clearError(nameInput); });
+
+      function setError(input) { input.closest('.field').classList.add('is-invalid'); }
+      function clearError(input) { input.closest('.field').classList.remove('is-invalid'); }
+
+      function validate() {
+        let ok = true;
+        if (nameInput.value.trim().length < 2) { setError(nameInput); ok = false; }
+        if (phoneDigits(phone.value).length !== 10) { setError(phone); ok = false; }
+        if (!ok) {
+          const firstBad = document.querySelector('.field.is-invalid input');
+          if (firstBad) firstBad.focus();
+        }
+        return ok;
+      }
+
+      /* --- UTM --- */
+      function getUtm() {
+        const p = new URLSearchParams(window.location.search);
+        return {
+          utm_source: p.get('utm_source') || '',
+          utm_medium: p.get('utm_medium') || '',
+          utm_campaign: p.get('utm_campaign') || '',
+          utm_content: p.get('utm_content') || ''
+        };
+      }
+
+      /* --- Отправка --- */
+      const form = document.getElementById('lead-form');
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      const btnText = btn.textContent;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.textContent = '';
+        if (!validate()) return;
+
+        const tgValue = tg.value.trim();
+        const payload = Object.assign({
+          name: nameInput.value.trim(),
+          phone: phone.value,
+          telegram: tgValue === '@' ? '' : tgValue,
+          date: new Date().toISOString()
+        }, getUtm());
+
+        btn.disabled = true;
+        btn.textContent = 'Отправляем…';
+
+        const request = SHEET_WEBHOOK_URL
+          ? fetch(SHEET_WEBHOOK_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(payload)
+            })
+          : Promise.resolve(console.warn('SHEET_WEBHOOK_URL не задан, заявка:', payload));
+
+        request
+          .then(showSuccess)
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = btnText;
+            status.textContent = 'Не удалось отправить. Проверьте интернет и попробуйте ещё раз.';
+          });
+      });
+
+      function showSuccess() {
+        const wrap = document.getElementById('form-wrap');
+        let html = '<div class="success"><p class="success__text">Спасибо! Ссылка на вебинар будет в Telegram-канале</p>';
+        if (CHANNEL_URL) {
+          html += '<a class="btn" href="' + CHANNEL_URL + '" target="_blank" rel="noopener">Перейти в канал</a>';
+        }
+        html += '</div>';
+        wrap.innerHTML = html;
+        wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    })();
+  </script>
+
+  <script>
+    /* ===== Счётчик до эфира ===== */
+    // Момент начала с явным смещением МСК: счёт одинаковый в любом часовом поясе посетителя
+    const WEBINAR_START = '2026-10-16T17:00:00+03:00';
+
+    (function () {
+      'use strict';
+
+      const START_MS = Date.parse(WEBINAR_START);
+      const box = document.getElementById('countdown');
+      if (!box || isNaN(START_MS)) return;
+
+      const timer = document.getElementById('countdown-timer');
+      const live = document.getElementById('countdown-live');
+      const daysCell = document.getElementById('cd-days-cell');
+      const topbarTimer = document.getElementById('topbar-timer');
+      const units = {
+        days: ['день', 'дня', 'дней'],
+        hours: ['час', 'часа', 'часов'],
+        minutes: ['минута', 'минуты', 'минут'],
+        seconds: ['секунда', 'секунды', 'секунд']
+      };
+      let tickId = null;
+
+      function plural(n, forms) {
+        const n10 = n % 10;
+        const n100 = n % 100;
+        if (n10 === 1 && n100 !== 11) return forms[0];
+        if (n10 >= 2 && n10 <= 4 && (n100 < 12 || n100 > 14)) return forms[1];
+        return forms[2];
+      }
+
+      function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+      function setPart(key, value) {
+        document.getElementById('cd-' + key).textContent = pad(value);
+        document.getElementById('cd-' + key + '-unit').textContent = plural(value, units[key]);
+      }
+
+      function render() {
+        const left = Math.ceil((START_MS - Date.now()) / 1000);
+
+        if (left <= 0) {
+          timer.hidden = true;
+          live.hidden = false;
+          topbarTimer.textContent = 'эфир уже идёт';
+          clearTimeout(tickId);
+          return false;
+        }
+
+        const d = Math.floor(left / 86400);
+        const h = Math.floor(left % 86400 / 3600);
+        const m = Math.floor(left % 3600 / 60);
+        const s = left % 60;
+
+        daysCell.hidden = d === 0;
+        setPart('days', d);
+        setPart('hours', h);
+        setPart('minutes', m);
+        setPart('seconds', s);
+
+        topbarTimer.textContent = 'до эфира ' + (d ? d + ' д ' : '') + pad(h) + ':' + pad(m) + ':' + pad(s);
+        return true;
+      }
+
+      function tick() {
+        if (!render()) return;
+        // Подстраиваемся под границу секунды, чтобы цифры не отставали
+        tickId = setTimeout(tick, 1000 - (Date.now() % 1000) || 1000);
+      }
+
+      box.hidden = false;
+      topbarTimer.hidden = false;
+      tick();
+    })();
+
+    /* ===== Закреплённая кнопка на телефоне ===== */
+    (function () {
+      'use strict';
+
+      const sticky = document.getElementById('sticky-cta');
+      const formBlock = document.getElementById('form');
+      const formWrap = document.getElementById('form-wrap');
+      if (!sticky || !formBlock || !('IntersectionObserver' in window)) return;
+
+      const link = sticky.querySelector('a');
+      let done = false;
+
+      function setShown(shown) {
+        sticky.classList.toggle('is-shown', shown);
+        sticky.setAttribute('aria-hidden', shown ? 'false' : 'true');
+        link.tabIndex = shown ? 0 : -1;
+      }
+
+      // Показываем, только когда форма целиком ушла за верхний край экрана
+      const io = new IntersectionObserver(function (entries) {
+        const entry = entries[0];
+        if (done) return;
+        setShown(!entry.isIntersecting && entry.boundingClientRect.bottom <= 0);
+      });
+      io.observe(formBlock);
+
+      // После успешной отправки форма подменяется блоком «Спасибо» — кнопка больше не нужна
+      if (formWrap && 'MutationObserver' in window) {
+        const mo = new MutationObserver(function () {
+          if (!formWrap.querySelector('.success')) return;
+          done = true;
+          setShown(false);
+          io.disconnect();
+          mo.disconnect();
+          sticky.remove();
+        });
+        mo.observe(formWrap, { childList: true });
+      }
+    })();
+  </script>
+</body>
+</html>
